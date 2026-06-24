@@ -1,0 +1,53 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--out ./cortical_munged \
+--merge-alleles ./../../../../../../ldsc/w_hm3.snplist \
+--frq MAF \
+--chunksize 500000 \
+--N 18037.0 \
+--a1 A1 \
+--a2 A2 \
+--snp SNP \
+--sumstats ./../Cortical_GWAS.tsv \
+--p P 
+
+Interpreting column names as follows:
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+P:	p-Value
+BETA:	[linear/logistic] regression coefficient (0 --> no effect; above 0 --> A1 is trait/risk increasing)
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+SNP:	Variant ID (e.g., rs number)
+MAF:	Allele frequency
+
+Reading list of SNPs for allele merge from ./../../../../../../ldsc/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from ./../Cortical_GWAS.tsv into memory 500000 SNPs at a time.
+Read 1011814 SNPs from --sumstats file.
+Removed 0 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1011814 SNPs remain.
+Removed 202 SNPs with duplicated rs numbers (1011612 SNPs remain).
+Using N = 18037.0
+Median value of BETA was 0.00014931009017, which seems sensible.
+Removed 0 SNPs whose alleles did not match --merge-alleles (1011612 SNPs remain).
+Writing summary statistics for 1217311 SNPs (1011612 with nonmissing beta) to ./cortical_munged.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.418
+Lambda GC = 1.255
+Max chi^2 = 212.487
+1021 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Fri Apr 10 18:00:47 2026
+Total time elapsed: 17.22s
