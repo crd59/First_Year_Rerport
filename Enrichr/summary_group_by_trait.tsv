@@ -1,0 +1,22 @@
+group	theme	cortical	limb	trunk	TOTAL
+Cell cycle, proliferation & senescence	Cell-cycle, growth & survival	25	10	31	66
+Cardiovascular development	Cardiovascular, organ & tissue development	4	26	29	59
+Skeletal, cartilage & ECM	Skeletal & musculoskeletal development	1	25	26	52
+Other organ & epithelial morphogenesis	Cardiovascular, organ & tissue development	3	21	22	46
+Insulin/IGF, glucose & energy metabolism	Metabolic & endocrine	5	9	27	41
+Transcription & gene expression	Gene regulation & genome maintenance	10	15	16	41
+EMT, mesenchyme, migration & adhesion	Cardiovascular, organ & tissue development	8	15	13	36
+RTK, MAPK & PI3K–AKT signalling	Developmental signalling pathways	3	10	19	32
+Neural development & synaptic function	Neural development	9	6	15	30
+Broad regulatory terms (low specificity)	Broad / low-specificity	6	8	15	29
+TGFβ / BMP / SMAD signalling	Developmental signalling pathways	0	16	12	28
+Chromatin, epigenetics & ncRNA	Gene regulation & genome maintenance	3	11	13	27
+Lipid, steroid & hormone signalling	Metabolic & endocrine	3	7	15	25
+Protein modification, degradation & transport	Cellular housekeeping	4	9	10	23
+Limb, muscle & body-plan patterning	Skeletal & musculoskeletal development	1	8	12	21
+Apoptosis, DNA damage & p53	Cell-cycle, growth & survival	8	2	10	20
+Cell & organism growth	Cell-cycle, growth & survival	4	3	9	16
+WNT signalling	Developmental signalling pathways	3	4	8	15
+Immune & inflammatory signalling	Immune & inflammatory	6	2	4	12
+Hedgehog & Notch signalling	Developmental signalling pathways	0	2	3	5
+Cellular stress & environmental response	Cellular housekeeping	0	0	4	4
