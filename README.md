@@ -8,3 +8,5 @@ Explanation of folders:
 - SuSiE_coloc: Containing code to create genomic loci, identify overlapping loci, run SuSiE fine-mapping, and SuSiE colocalisation (figure 4)
 - FLAMES_sample_code: Containing code and notes on running the FLAMES pipeline as well as to create Figures 5 and 6 
 - Enrichr: All code and data necessary to replicate gene-set enrichment analyses and plot figure 7.
+
+# Appendix 1: GO term curation by Opus 4.8 in ./Enrichr/go_term_curation.tsv
