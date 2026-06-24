@@ -69,22 +69,22 @@ library(Rfast)
 
 setwd("~/Desktop/PhD/First_project/FUMA")
 # 
-# cortical_grl <- read.table("Cortical_FUMA/GenomicRiskLoci.txt", header = T)
-# trunk_grl <- read.table("TrunkWidths_FUMA/GenomicRiskLoci.txt", header = T)
-# limb_grl <-  read.table("LimbHeight_FUMA/GenomicRiskLoci.txt", header = T)
-# 
-# femur_grl <- read.table("Femur_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# FI_grl <- read.table("FI_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# SA_grl <- read.table("SA_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# IC_grl <- read.table("IC_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# forearm_grl <- read.table("Forearm_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# humerus_grl <- read.table("Humerus_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# tibia_grl <- read.table("Tibia_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# torso_grl <- read.table("Torso_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# shoulders_grl <- read.table("Shoulder_width_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# height_grl <- read.table("Height_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# hip_grl <- read.table("Hip_width_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
-# 
+ cortical_grl <- read.table("Cortical_FUMA/GenomicRiskLoci.txt", header = T)
+ trunk_grl <- read.table("TrunkWidths_FUMA/GenomicRiskLoci.txt", header = T)
+ limb_grl <-  read.table("LimbHeight_FUMA/GenomicRiskLoci.txt", header = T)
+ 
+ femur_grl <- read.table("Femur_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ FI_grl <- read.table("FI_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ SA_grl <- read.table("SA_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ IC_grl <- read.table("IC_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ forearm_grl <- read.table("Forearm_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ humerus_grl <- read.table("Humerus_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ tibia_grl <- read.table("Tibia_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ torso_grl <- read.table("Torso_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ shoulders_grl <- read.table("Shoulder_width_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ height_grl <- read.table("Height_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ hip_grl <- read.table("Hip_width_FUMA/SNP2GENE/GenomicRiskLoci.txt", header = T)
+ 
 
 
 # If the genomic span of a locus is less than 1 megabase, make it one 
@@ -95,128 +95,127 @@ traits <- c('cortical_grl', 'femur_grl', 'FI_grl', 'forearm_grl',
             'limb_grl', 'SA_grl', 'shoulders_grl', 'tibia_grl',
             'torso_grl', 'trunk_grl')
 
-# for(trait in traits){
-# 
-# get_trait <- get(trait)  
-#   
-# for(grl in 1:nrow(get_trait)){
-# 
-# start <- get_trait$start[grl]
-# end <- get_trait$end[grl]
-# diff <- end - start
-# 
-# # Extend to 1 Mb minimum
-# 
-# if(diff < 1000000){
-#   
-#   to_1mb <- 1000000 - diff
-#   
-#   get_trait$start[grl] <- start - ceiling(to_1mb/2)
-#   get_trait$end[grl] <- end + ceiling(to_1mb/2)
-# }
-# }
-# 
-# get_trait <- get_trait[,-1]
-# get_trait <- merge_overlapping_loci(get_trait)
-# get_trait[[paste0(trait, "_locus")]] <- 1:nrow(get_trait)
-# 
-# # Give each locus a name
-# assign(trait, get_trait)
-# }
-# 
+ for(trait in traits){
+ 
+ get_trait <- get(trait)  
+   
+ for(grl in 1:nrow(get_trait)){
+ 
+ start <- get_trait$start[grl]
+ end <- get_trait$end[grl]
+ diff <- end - start
+ 
+ # Extend to 1 Mb minimum
+ 
+ if(diff < 1000000){
+   
+   to_1mb <- 1000000 - diff
+   
+   get_trait$start[grl] <- start - ceiling(to_1mb/2)
+   get_trait$end[grl] <- end + ceiling(to_1mb/2)
+ }
+ }
+ 
+ get_trait <- get_trait[,-1]
+ get_trait <- merge_overlapping_loci(get_trait)
+ get_trait[[paste0(trait, "_locus")]] <- 1:nrow(get_trait)
+ 
+ # Give each locus a name
+ assign(trait, get_trait) }
+ 
 # 6## Define overlapping regions and run susie coloc
-# # Start only on overlap between the 3 multivariate GWAS
-# 
-# trunk_grl_match_df <- as.data.frame(matrix(nrow = nrow(trunk_grl), ncol = 14))
-# colnames(trunk_grl_match_df) <- traits
-# trunk_grl_match_df$trunk_grl <- 1:nrow(trunk_grl)
-# 
-# traits_trunk <- c('cortical_grl', 'femur_grl', 'FI_grl', 'forearm_grl',
-#             'height_grl', 'hip_grl', 'humerus_grl', 'IC_grl',
-#             'limb_grl', 'SA_grl', 'shoulders_grl', 'tibia_grl',
-#             'torso_grl')
-# 
-# 
-# for(trait in traits_trunk){
-#   get_trait <- get(trait)
-#   
-#   for(i in 1:nrow(trunk_grl)){
-#     grl <- trunk_grl[i,]
-#     bps <- seq(grl$start, grl$end)
-#     
-#     if(nrow(get_trait[get_trait$chr == grl$chr & (get_trait$start %in% bps | get_trait$end %in% bps),]) > 0){
-#       trunk_grl_match_df[[trait]][i] <- paste0(get_trait[get_trait$chr == grl$chr &
-#                                                            (get_trait$start %in% bps |
-#                                                               get_trait$end %in% bps),][[paste0(trait, "_locus")]], collapse = ";")
-#     }
-#   }}
+   # # Start only on overlap between the 3 multivariate GWAS
+ 
+ trunk_grl_match_df <- as.data.frame(matrix(nrow = nrow(trunk_grl), ncol = 14))
+ colnames(trunk_grl_match_df) <- traits
+ trunk_grl_match_df$trunk_grl <- 1:nrow(trunk_grl)
+ 
+ traits_trunk <- c('cortical_grl', 'femur_grl', 'FI_grl', 'forearm_grl',
+             'height_grl', 'hip_grl', 'humerus_grl', 'IC_grl',
+             'limb_grl', 'SA_grl', 'shoulders_grl', 'tibia_grl',
+             'torso_grl')
+ 
+ 
+ for(trait in traits_trunk){
+   get_trait <- get(trait)
+   
+   for(i in 1:nrow(trunk_grl)){
+     grl <- trunk_grl[i,]
+     bps <- seq(grl$start, grl$end)
+     
+     if(nrow(get_trait[get_trait$chr == grl$chr & (get_trait$start %in% bps | get_trait$end %in% bps),]) > 0){
+       trunk_grl_match_df[[trait]][i] <- paste0(get_trait[get_trait$chr == grl$chr &
+                                                            (get_trait$start %in% bps |
+                                                               get_trait$end %in% bps),][[paste0(trait, "_locus")]], collapse = ";")
+     }
+   }}
 
 
 # ── 1. Combine all loci into one long data frame ──────────────────────────────
 # 
-# traits <- c('cortical_grl', 'femur_grl', 'FI_grl', 'forearm_grl',
-#             'height_grl', 'hip_grl', 'humerus_grl', 'IC_grl',
-#             'limb_grl', 'SA_grl', 'shoulders_grl', 'tibia_grl', 'torso_grl',
-#             'trunk_grl')
-# 
-# all_loci <- bind_rows(lapply(traits, function(t) {
-#   df <- get(t)
-#   df$trait     <- t
-#   df$locus_id  <- df[[paste0(t, "_locus")]]
-#   df[, c("trait", "locus_id", "chr", "start", "end")]
-# }))
+ traits <- c('cortical_grl', 'femur_grl', 'FI_grl', 'forearm_grl',
+             'height_grl', 'hip_grl', 'humerus_grl', 'IC_grl',
+             'limb_grl', 'SA_grl', 'shoulders_grl', 'tibia_grl', 'torso_grl',
+             'trunk_grl')
+ 
+ all_loci <- bind_rows(lapply(traits, function(t) {
+   df <- get(t)
+   df$trait     <- t
+   df$locus_id  <- df[[paste0(t, "_locus")]]
+   df[, c("trait", "locus_id", "chr", "start", "end")]
+ }))
 
-# write.table(all_loci, "./../SuSiE_coloc/all_loci.tsv", sep = "\t", col.names = T)
+ write.table(all_loci, "./../SuSiE_coloc/all_loci.tsv", sep = "\t", col.names = T)
 
 all_loci <- read.table("./../SuSiE_coloc/all_loci.tsv", sep= "\t", header =T)
 
 # ── 2. Get all unique trait pairs ─────────────────────────────────────────────
 # 
-# focal_traits <- c('trunk_grl', 'cortical_grl', 'limb_grl')
-# focal_sans_limb <- c('trunk_grl', 'cortical_grl')
-# other_traits <- setdiff(traits, focal_traits)
-# 
-# trait_pairs <- c(
-#   # focal vs all others
-#   lapply(focal_traits, function(f) lapply(other_traits, function(o) c(f, o))),
-#   # focal vs focal (e.g. cortical vs limb)
-#   lapply('limb_grl', function(f) lapply(focal_sans_limb, function(o) c(f, o))),
-#   lapply('trunk_grl', function(f) lapply("cortical_grl", function(o) c(f, o)))
-# ) %>% unlist(recursive = FALSE)
-# 
+ focal_traits <- c('trunk_grl', 'cortical_grl', 'limb_grl')
+ focal_sans_limb <- c('trunk_grl', 'cortical_grl')
+ other_traits <- setdiff(traits, focal_traits)
+ 
+ trait_pairs <- c(
+   # focal vs all others
+   lapply(focal_traits, function(f) lapply(other_traits, function(o) c(f, o))),
+   # focal vs focal (e.g. cortical vs limb)
+   lapply('limb_grl', function(f) lapply(focal_sans_limb, function(o) c(f, o))),
+   lapply('trunk_grl', function(f) lapply("cortical_grl", function(o) c(f, o)))
+ ) %>% unlist(recursive = FALSE)
+ 
 # # ── 3. Find overlapping loci for each pair ────────────────────────────────────
 # 
-# find_overlapping_pairs <- function(t1, t2, loci_df) {
-#   l1 <- filter(loci_df, trait == t1)
-#   l2 <- filter(loci_df, trait == t2)
-#   
-#   # Cross join then filter to overlapping intervals on same chromosome
-#   cross_join(l1, l2, suffix = c("_t1", "_t2")) %>%
-#     filter(chr_t1 == chr_t2,
-#            start_t1 <= end_t2,
-#            start_t2 <= end_t1) %>%
-#     transmute(
-#       trait1    = trait_t1,
-#       locus_id1 = locus_id_t1,
-#       trait2    = trait_t2,
-#       locus_id2 = locus_id_t2
-#     )
-# }
-# 
-# coloc_pairs <- bind_rows(lapply(trait_pairs, function(pair) {
-#   find_overlapping_pairs(pair[1], pair[2], all_loci)
-# }))
-# 
+ find_overlapping_pairs <- function(t1, t2, loci_df) {
+   l1 <- filter(loci_df, trait == t1)
+   l2 <- filter(loci_df, trait == t2)
+   
+   # Cross join then filter to overlapping intervals on same chromosome
+   cross_join(l1, l2, suffix = c("_t1", "_t2")) %>%
+     filter(chr_t1 == chr_t2,
+            start_t1 <= end_t2,
+            start_t2 <= end_t1) %>%
+     transmute(
+       trait1    = trait_t1,
+       locus_id1 = locus_id_t1,
+       trait2    = trait_t2,
+       locus_id2 = locus_id_t2
+     )
+ }
+ 
+ coloc_pairs <- bind_rows(lapply(trait_pairs, function(pair) {
+   find_overlapping_pairs(pair[1], pair[2], all_loci)
+ }))
+ 
 # # ── 4. Inspect ────────────────────────────────────────────────────────────────
 # 
-# # How many pairs per trait combination?
-# coloc_pairs_combinations <- coloc_pairs %>% count(trait1, trait2)
-# 
-# write.table(coloc_pairs_combinations, "./../SuSiE_coloc/coloc_pairs_combinations.tsv",
-#             sep = "\t", col.names = T)
-# 
-# write.table(coloc_pairs, "./../SuSiE_coloc/coloc_pairs.tsv",
-#             sep = "\t", col.names = T)
+ # How many pairs per trait combination?
+ coloc_pairs_combinations <- coloc_pairs %>% count(trait1, trait2)
+ 
+ write.table(coloc_pairs_combinations, "./../SuSiE_coloc/coloc_pairs_combinations.tsv",
+             sep = "\t", col.names = T)
+ 
+ write.table(coloc_pairs, "./../SuSiE_coloc/coloc_pairs.tsv",
+             sep = "\t", col.names = T)
 
 coloc_pairs <- read.table("./../SuSiE_coloc/coloc_pairs.tsv", sep = "\t", header = T)
 
