@@ -9,4 +9,4 @@ Explanation of folders:
 - FLAMES_sample_code: Containing code and notes on running the FLAMES pipeline as well as to create Figures 5 and 6 
 - Enrichr: All code and data necessary to replicate gene-set enrichment analyses and plot figure 7.
 
-# Appendix 1: GO term curation by Opus 4.8 in ./Enrichr/go_term_curation.tsv
+#### Appendix 1: GO term curation by Opus 4.8 in ./Enrichr/go_term_curation.tsv
