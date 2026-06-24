@@ -1,0 +1,358 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr ./../../../../../ldsc/eur_w_ld_chr/ \
+--out avg_forearm_rg \
+--rg ./../important_sumstats/avg_forearm.sumstats.gz,./../important_sumstats/avg_humerus.sumstats.gz,./../important_sumstats/avg_tibia.sumstats.gz,./../important_sumstats/birth_length.sumstats.gz,./../important_sumstats/global_FI.sumstats.gz,./../important_sumstats/global_GMV.sumstats.gz,./../important_sumstats/global_IC.sumstats.gz,./../important_sumstats/global_SA.sumstats.gz,./../important_sumstats/HC.sumstats.gz,./../important_sumstats/height.sumstats.gz,./../important_sumstats/hip_width.sumstats.gz,./../important_sumstats/shoulder_width.sumstats.gz,./../important_sumstats/torso_length.sumstats.gz \
+--w-ld-chr ./../../../../../ldsc/eur_w_ld_chr/ 
+
+Beginning analysis at Fri Dec  5 14:54:55 2025
+Reading summary statistics from ./../important_sumstats/avg_forearm.sumstats.gz ...
+Read summary statistics for 1033752 SNPs.
+Reading reference panel LD Score from ./../../../../../ldsc/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ./../../../../../ldsc/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 1027758 SNPs remain.
+After merging with regression SNP LD, 1027758 SNPs remain.
+Computing rg for phenotype 2/13
+Reading summary statistics from ./../important_sumstats/avg_humerus.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027758 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.4367 (0.0304)
+Lambda GC: 1.3101
+Mean Chi^2: 1.5187
+Intercept: 1.0325 (0.014)
+Ratio: 0.0626 (0.0271)
+
+Heritability of phenotype 2/13
+------------------------------
+Total Observed scale h2: 0.4479 (0.0294)
+Lambda GC: 1.3203
+Mean Chi^2: 1.5308
+Intercept: 1.031 (0.0127)
+Ratio: 0.0584 (0.024)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.3566 (0.0249)
+Mean z1*z2: 1.1426
+Intercept: 0.7467 (0.0115)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.8064 (0.0245)
+Z-score: 32.9178
+P: 1.2244e-237
+
+Computing rg for phenotype 3/13
+Reading summary statistics from ./../important_sumstats/avg_tibia.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027757 SNPs with valid alleles.
+
+Heritability of phenotype 3/13
+------------------------------
+Total Observed scale h2: 0.4604 (0.0291)
+Lambda GC: 1.334
+Mean Chi^2: 1.5578
+Intercept: 1.0517 (0.0133)
+Ratio: 0.0926 (0.0238)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.3913 (0.0268)
+Mean z1*z2: 1.2913
+Intercept: 0.8583 (0.0123)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.8727 (0.0099)
+Z-score: 88.0531
+P: 0.
+
+Computing rg for phenotype 4/13
+Reading summary statistics from ./../important_sumstats/birth_length.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+854501 SNPs with valid alleles.
+
+Heritability of phenotype 4/13
+------------------------------
+Total Observed scale h2: 0.171 (0.0251)
+Lambda GC: 1.0618
+Mean Chi^2: 1.07
+Intercept: 0.9913 (0.008)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1093 (0.0181)
+Mean z1*z2: 0.0979
+Intercept: 0.017 (0.0078)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.4006 (0.0562)
+Z-score: 7.1254
+P: 1.0379e-12
+
+Computing rg for phenotype 5/13
+Reading summary statistics from ./../important_sumstats/global_FI.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1026241 SNPs with valid alleles.
+
+Heritability of phenotype 5/13
+------------------------------
+Total Observed scale h2: 0.3725 (0.0258)
+Lambda GC: 1.2865
+Mean Chi^2: 1.4375
+Intercept: 1.0123 (0.0121)
+Ratio: 0.028 (0.0276)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0625 (0.0156)
+Mean z1*z2: 0.1645
+Intercept: 0.0917 (0.0073)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.155 (0.0355)
+Z-score: 4.3632
+P: 1.2819e-05
+
+Computing rg for phenotype 6/13
+Reading summary statistics from ./../important_sumstats/global_GMV.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1026241 SNPs with valid alleles.
+
+Heritability of phenotype 6/13
+------------------------------
+Total Observed scale h2: 0.3287 (0.027)
+Lambda GC: 1.2464
+Mean Chi^2: 1.4069
+Intercept: 1.0314 (0.0126)
+Ratio: 0.0771 (0.031)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0723 (0.0151)
+Mean z1*z2: 0.2101
+Intercept: 0.1277 (0.0082)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.1907 (0.0356)
+Z-score: 5.3571
+P: 8.4587e-08
+
+Computing rg for phenotype 7/13
+Reading summary statistics from ./../important_sumstats/global_IC.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1026241 SNPs with valid alleles.
+
+Heritability of phenotype 7/13
+------------------------------
+Total Observed scale h2: 0.3164 (0.0223)
+Lambda GC: 1.2531
+Mean Chi^2: 1.3677
+Intercept: 1.0144 (0.0104)
+Ratio: 0.0392 (0.0282)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0772 (0.0147)
+Mean z1*z2: 0.1706
+Intercept: 0.0832 (0.007)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.2077 (0.0363)
+Z-score: 5.7211
+P: 1.0585e-08
+
+Computing rg for phenotype 8/13
+Reading summary statistics from ./../important_sumstats/global_SA.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1026241 SNPs with valid alleles.
+
+Heritability of phenotype 8/13
+------------------------------
+Total Observed scale h2: 0.4003 (0.0331)
+Lambda GC: 1.2966
+Mean Chi^2: 1.4798
+Intercept: 1.018 (0.0138)
+Ratio: 0.0374 (0.0287)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0817 (0.0162)
+Mean z1*z2: 0.2227
+Intercept: 0.1274 (0.0078)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.1954 (0.0349)
+Z-score: 5.5931
+P: 2.2303e-08
+
+Computing rg for phenotype 9/13
+Reading summary statistics from ./../important_sumstats/HC.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+928119 SNPs with valid alleles.
+
+Heritability of phenotype 9/13
+------------------------------
+Total Observed scale h2: 0.0829 (0.0164)
+Lambda GC: 1.0649
+Mean Chi^2: 1.0785
+Intercept: 1.0238 (0.008)
+Ratio: 0.3033 (0.1013)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0715 (0.0141)
+Mean z1*z2: 0.0579
+Intercept: -0.0051 (0.0063)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.3731 (0.0767)
+Z-score: 4.8622
+P: 1.1608e-06
+
+Computing rg for phenotype 10/13
+Reading summary statistics from ./../important_sumstats/height.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+930437 SNPs with valid alleles.
+
+Heritability of phenotype 10/13
+-------------------------------
+Total Observed scale h2: 0.389 (0.0182)
+Lambda GC: 5.3979
+Mean Chi^2: 15.1758
+Intercept: 2.2647 (0.2017)
+Ratio: 0.0892 (0.0142)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.3274 (0.0163)
+Mean z1*z2: 2.3016
+Intercept: 0.3047 (0.0373)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.8139 (0.016)
+Z-score: 50.7693
+P: 0.
+
+Computing rg for phenotype 11/13
+Reading summary statistics from ./../important_sumstats/hip_width.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027758 SNPs with valid alleles.
+
+Heritability of phenotype 11/13
+-------------------------------
+Total Observed scale h2: 0.391 (0.0339)
+Lambda GC: 1.2865
+Mean Chi^2: 1.455
+Intercept: 1.0269 (0.0148)
+Ratio: 0.0591 (0.0326)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.2386 (0.0236)
+Mean z1*z2: 0.7376
+Intercept: 0.4717 (0.0108)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.5773 (0.0258)
+Z-score: 22.3412
+P: 1.472e-110
+
+Computing rg for phenotype 12/13
+Reading summary statistics from ./../important_sumstats/shoulder_width.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027758 SNPs with valid alleles.
+
+Heritability of phenotype 12/13
+-------------------------------
+Total Observed scale h2: 0.3356 (0.0224)
+Lambda GC: 1.2597
+Mean Chi^2: 1.3768
+Intercept: 1.0161 (0.0099)
+Ratio: 0.0428 (0.0263)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.201 (0.0192)
+Mean z1*z2: 0.6707
+Intercept: 0.4493 (0.0085)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.5249 (0.028)
+Z-score: 18.756
+P: 1.7288e-78
+
+Computing rg for phenotype 13/13
+Reading summary statistics from ./../important_sumstats/torso_length.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027758 SNPs with valid alleles.
+
+Heritability of phenotype 13/13
+-------------------------------
+Total Observed scale h2: 0.3793 (0.0264)
+Lambda GC: 1.2831
+Mean Chi^2: 1.4314
+Intercept: 1.0148 (0.0119)
+Ratio: 0.0344 (0.0275)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.2031 (0.0193)
+Mean z1*z2: 0.6249
+Intercept: 0.3956 (0.0094)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.4991 (0.0261)
+Z-score: 19.1018
+P: 2.4393e-81
+
+
+Summary of Genetic Correlation Results
+p1                                                  p2      rg      se        z            p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+./../important_sumstats/avg_forearm.sumstats.gz     ./../important_sumstats/avg_humerus.sumstats.gz  0.8064  0.0245  32.9178  1.2244e-237  0.4479     0.0294  1.0310     0.0127    0.7467       0.0115
+./../important_sumstats/avg_forearm.sumstats.gz       ./../important_sumstats/avg_tibia.sumstats.gz  0.8727  0.0099  88.0531   0.0000e+00  0.4604     0.0291  1.0517     0.0133    0.8583       0.0123
+./../important_sumstats/avg_forearm.sumstats.gz       ./../important_sumstats/global_FI.sumstats.gz  0.1550  0.0355   4.3632   1.2819e-05  0.3725     0.0258  1.0123     0.0121    0.0917       0.0073
+./../important_sumstats/avg_forearm.sumstats.gz       ./../important_sumstats/global_IC.sumstats.gz  0.2077  0.0363   5.7211   1.0585e-08  0.3164     0.0223  1.0144     0.0104    0.0832       0.0070
+./../important_sumstats/avg_forearm.sumstats.gz       ./../important_sumstats/global_SA.sumstats.gz  0.1954  0.0349   5.5931   2.2303e-08  0.4003     0.0331  1.0180     0.0138    0.1274       0.0078
+./../important_sumstats/avg_forearm.sumstats.gz       ./../important_sumstats/hip_width.sumstats.gz  0.5773  0.0258  22.3412  1.4720e-110  0.3910     0.0339  1.0269     0.0148    0.4717       0.0108
+./../important_sumstats/avg_forearm.sumstats.gz  ./../important_sumstats/shoulder_width.sumstats.gz  0.5249  0.0280  18.7560   1.7288e-78  0.3356     0.0224  1.0161     0.0099    0.4493       0.0085
+./../important_sumstats/avg_forearm.sumstats.gz    ./../important_sumstats/torso_length.sumstats.gz  0.4991  0.0261  19.1018   2.4393e-81  0.3793     0.0264  1.0148     0.0119    0.3956       0.0094
+
+Analysis finished at Fri Dec  5 14:55:44 2025
+Total time elapsed: 48.55s
