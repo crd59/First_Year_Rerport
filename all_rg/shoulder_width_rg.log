@@ -1,0 +1,65 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr ./../../../../../ldsc/eur_w_ld_chr/ \
+--out shoulder_width_rg \
+--rg ./../important_sumstats/shoulder_width.sumstats.gz,./../important_sumstats/torso_length.sumstats.gz \
+--w-ld-chr ./../../../../../ldsc/eur_w_ld_chr/ 
+
+Beginning analysis at Fri Dec  5 15:00:57 2025
+Reading summary statistics from ./../important_sumstats/shoulder_width.sumstats.gz ...
+Read summary statistics for 1033752 SNPs.
+Reading reference panel LD Score from ./../../../../../ldsc/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from ./../../../../../ldsc/eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 1027758 SNPs remain.
+After merging with regression SNP LD, 1027758 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from ./../important_sumstats/torso_length.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1027758 SNPs remain.
+1027758 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.3356 (0.0224)
+Lambda GC: 1.2597
+Mean Chi^2: 1.3768
+Intercept: 1.0161 (0.0099)
+Ratio: 0.0428 (0.0263)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.3793 (0.0264)
+Lambda GC: 1.2831
+Mean Chi^2: 1.4314
+Intercept: 1.0148 (0.0119)
+Ratio: 0.0344 (0.0275)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.175 (0.0175)
+Mean z1*z2: 0.5319
+Intercept: 0.3368 (0.008)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.4904 (0.0305)
+Z-score: 16.0602
+P: 4.8472e-58
+
+
+Summary of Genetic Correlation Results
+p1                                                p2      rg      se        z           p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+./../important_sumstats/shoulder_width.sumstats.gz  ./../important_sumstats/torso_length.sumstats.gz  0.4904  0.0305  16.0602  4.8472e-58  0.3793     0.0264  1.0148     0.0119    0.3368        0.008
+
+Analysis finished at Fri Dec  5 15:01:08 2025
+Total time elapsed: 11.31s
